@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ReviewReply AI - Smart Review Response Generator</title>
+    <meta name="description"
+        content="AI-powered tool for local businesses to generate professional, personalized responses to customer reviews on Google and Yelp in seconds." />
+    <meta name="keywords"
+        content="review response generator, AI review reply, customer review management, Google review response, Yelp response, business reputation management" />
+    <meta name="author" content="ReviewReply AI" />
+    <meta property="og:title" content="ReviewReply AI - Smart Review Response Generator" />
+    <meta property="og:description"
+        content="Generate professional, on-brand responses to customer reviews instantly using AI." />
+    <meta property="og:type" content="website" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <div class="bg-orb bg-orb--1" aria-hidden="true"></div>
+    <div class="bg-orb bg-orb--2" aria-hidden="true"></div>
+    <div class="bg-orb bg-orb--3" aria-hidden="true"></div>
+
+    <!-- ===== NAVBAR ===== -->
+    <header class="navbar" role="banner">
+        <div class="navbar__inner">
+            <div class="navbar__brand">
+                <div class="navbar__logo" aria-hidden="true"><span class="logo-mark">R</span></div>
+                <span class="navbar__title">ReviewReply <span class="accent">AI</span></span>
+            </div>
+            <nav class="navbar__links" id="navbar-links" aria-label="Primary navigation">
+                <a href="#generator" class="nav-link" id="nav-generator">Generator</a>
+                <a href="#how-it-works" class="nav-link" id="nav-how">How It Works</a>
+                <a href="#analytics" class="nav-link" id="nav-analytics">Analytics</a>
+            </nav>
+            <div class="navbar__right">
+                <button class="hamburger" id="hamburger" type="button" aria-label="Open navigation"
+                    aria-expanded="false" aria-controls="mobile-nav">
+                    <span class="hamburger__line"></span>
+                    <span class="hamburger__line"></span>
+                    <span class="hamburger__line"></span>
+                </button>
+                <!-- Theme Toggle -->
+                <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle light/dark theme"
+                    title="Toggle theme">
+                    <svg class="theme-icon theme-icon--dark" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" aria-hidden="true">
+                        <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+                    </svg>
+                    <svg class="theme-icon theme-icon--light" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" aria-hidden="true">
+                        <circle cx="12" cy="12" r="5" />
+                        <line x1="12" y1="1" x2="12" y2="3" />
+                        <line x1="12" y1="21" x2="12" y2="23" />
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                        <line x1="1" y1="12" x2="3" y2="12" />
+                        <line x1="21" y1="12" x2="23" y2="12" />
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                    </svg>
+                </button>
+
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+
+        <!-- ===== HERO ===== -->
+        <section class="hero" aria-labelledby="hero-headline">
+            <div class="hero__inner">
+                <div class="hero__tag">AI-Powered Reputation Management</div>
+                <h1 class="hero__headline" id="hero-headline">
+                    Turn Every Review Into<br />
+                    <span class="gradient-text">a Brand Opportunity</span>
+                </h1>
+                <p class="hero__sub">
+                    Generate professional, personalized responses to Google and Yelp reviews in seconds.
+                    Protect your reputation and convert unhappy customers into loyal advocates.
+                </p>
+                <div class="hero__stats">
+                    <div class="hero__stat">
+                        <span class="stat-value">&lt; 2s</span>
+                        <span class="stat-label">Response Time</span>
+                    </div>
+                    <div class="hero__divider" aria-hidden="true"></div>
+                    <div class="hero__stat">
+                        <span class="stat-value">4</span>
+                        <span class="stat-label">Brand Tones</span>
+                    </div>
+                    <div class="hero__divider" aria-hidden="true"></div>
+                    <div class="hero__stat">
+                        <span class="stat-value">20+</span>
+                        <span class="stat-label">Languages</span>
+                    </div>
+                    <div class="hero__divider" aria-hidden="true"></div>
+                    <div class="hero__stat">
+                        <span class="stat-value">100%</span>
+                        <span class="stat-label">Free API</span>
+                    </div>
+                </div>
+                <a href="#generator" class="btn btn--primary btn--lg hero__cta">
+                    Start Generating Responses
+                    <svg class="btn__icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd"
+                            d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </a>
+            </div>
+            <div class="hero__visual" aria-hidden="true">
+                <div class="review-card review-card--preview">
+                    <div class="review-card__header">
+                        <div class="review-card__avatar">J</div>
+                        <div>
+                            <div class="review-card__name">James Miller</div>
+                            <div class="review-stars">
+                                <span class="star star--filled"></span><span class="star star--filled"></span>
+                                <span class="star star--filled"></span><span class="star star--empty"></span>
+                                <span class="star star--empty"></span>
+                            </div>
+                        </div>
+                        <span class="review-card__platform">Google</span>
+                    </div>
+                    <p class="review-card__text">"The wait time was too long and the order came out wrong.
+                        Disappointed."</p>
+                    <div class="review-card__response">
+                        <div class="response-label">AI Response</div>
+                        <p class="response-text">Thank you for sharing your experience, James. We sincerely apologize
+                            for the wait and the error with your order. This is not the standard we hold ourselves to.
+                            Please reach out directly so we can make this right.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== HOW IT WORKS ===== -->
+        <section class="how-it-works" id="how-it-works" aria-labelledby="how-headline">
+            <div class="section__inner">
+                <div class="section__header">
+                    <div class="section__tag">Simple Process</div>
+                    <h2 class="section__title" id="how-headline">Three Steps to a Perfect Response</h2>
+                </div>
+                <div class="steps-grid">
+                    <div class="step-card">
+                        <div class="step-card__number">01</div>
+                        <h3 class="step-card__title">Set Your Business Profile</h3>
+                        <p class="step-card__desc">Enter your business name, type, preferred language, and the response
+                            tone that matches your brand identity.</p>
+                    </div>
+                    <div class="step-connector" aria-hidden="true"></div>
+                    <div class="step-card">
+                        <div class="step-card__number">02</div>
+                        <h3 class="step-card__title">Paste the Customer Review</h3>
+                        <p class="step-card__desc">Copy any review from Google, Yelp, or TripAdvisor and paste it into
+                            the review input field.</p>
+                    </div>
+                    <div class="step-connector" aria-hidden="true"></div>
+                    <div class="step-card">
+                        <div class="step-card__number">03</div>
+                        <h3 class="step-card__title">Generate, Analyze and Export</h3>
+                        <p class="step-card__desc">Get your AI response plus a strategic follow-up recommendation. Copy
+                            or download and post it directly on the platform.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== GENERATOR ===== -->
+        <section class="generator" id="generator" aria-labelledby="generator-headline">
+            <div class="section__inner">
+                <div class="section__header">
+                    <div class="section__tag">AI Generator</div>
+                    <h2 class="section__title" id="generator-headline">Generate Your Response</h2>
+                    <p class="section__sub">Configure your business profile once, then generate responses for any review
+                        instantly. Press Ctrl + Enter to generate.</p>
+                </div>
+
+                <div class="generator__layout">
+
+                    <!-- LEFT: Config + Input -->
+                    <div class="generator__left">
+
+                        <!-- Business Profile Card -->
+                        <div class="card" id="profile-card">
+                            <div class="card__header">
+                                <h3 class="card__title">Business Profile</h3>
+                                <span class="card__badge">Configuration</span>
+                            </div>
+                            <div class="card__body">
+                                <div class="form-group">
+                                    <label class="form-label" for="business-name">Business Name</label>
+                                    <input class="form-input" type="text" id="business-name" name="business-name"
+                                        placeholder="e.g. Mario's Pizzeria" autocomplete="organization"
+                                        maxlength="80" />
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="form-label" for="business-type">Business Type</label>
+                                        <select class="form-input form-select" id="business-type" name="business-type">
+                                            <option value="restaurant">Restaurant</option>
+                                            <option value="hotel">Hotel</option>
+                                            <option value="cafe">Cafe</option>
+                                            <option value="retail shop">Retail Shop</option>
+                                            <option value="salon">Salon / Spa</option>
+                                            <option value="gym">Gym / Fitness</option>
+                                            <option value="medical clinic">Medical Clinic</option>
+                                            <option value="dental clinic">Dental Clinic</option>
+                                            <option value="auto repair">Auto Repair Shop</option>
+                                            <option value="real estate agency">Real Estate Agency</option>
+                                            <option value="law firm">Law Firm</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" for="review-platform">Platform</label>
+                                        <select class="form-input form-select" id="review-platform"
+                                            name="review-platform">
+                                            <option value="Google">Google</option>
+                                            <option value="Yelp">Yelp</option>
+                                            <option value="TripAdvisor">TripAdvisor</option>
+                                            <option value="Booking.com">Booking.com</option>
+                                            <option value="Facebook">Facebook</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="form-label" for="response-language">Response Language</label>
+                                        <select class="form-input form-select" id="response-language"
+                                            name="response-language">
+                                            <option value="English">English</option>
+                                            <option value="Spanish">Spanish</option>
+                                            <option value="French">French</option>
+                                            <option value="German">German</option>
+                                            <option value="Italian">Italian</option>
+                                            <option value="Portuguese">Portuguese</option>
+                                            <option value="Dutch">Dutch</option>
+                                            <option value="Russian">Russian</option>
+                                            <option value="Arabic">Arabic</option>
+                                            <option value="Chinese (Simplified)">Chinese (Simplified)</option>
+                                            <option value="Chinese (Traditional)">Chinese (Traditional)</option>
+                                            <option value="Japanese">Japanese</option>
+                                            <option value="Korean">Korean</option>
+                                            <option value="Hindi">Hindi</option>
+                                            <option value="Bengali">Bengali</option>
+                                            <option value="Turkish">Turkish</option>
+                                            <option value="Polish">Polish</option>
+                                            <option value="Swedish">Swedish</option>
+                                            <option value="Norwegian">Norwegian</option>
+                                            <option value="Danish">Danish</option>
+                                            <option value="Greek">Greek</option>
+                                            <option value="Thai">Thai</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" for="response-length-display">Response Length: <span
+                                                id="response-length-display" class="label-value">Medium</span></label>
+                                        <div class="range-wrapper">
+                                            <input type="range" class="range-slider" id="response-length"
+                                                name="response-length" min="1" max="3" step="1" value="2"
+                                                aria-label="Response length" />
+                                            <div class="range-labels" aria-hidden="true">
+                                                <span>Short</span><span>Medium</span><span>Detailed</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Brand Voice -->
+                                <div class="form-group">
+                                    <label class="form-label" for="brand-voice">Brand Voice <span
+                                            class="label-optional">(optional)</span></label>
+                                    <textarea class="form-input form-textarea form-textarea--sm" id="brand-voice"
+                                        name="brand-voice"
+                                        placeholder="Describe your brand personality in 1-2 sentences. e.g. We are a family-owned Italian restaurant with a warm, community-focused culture. We prioritize making every guest feel like family."
+                                        rows="2" maxlength="300"></textarea>
+                                    <div class="input-meta">
+                                        <span class="input-hint">Injected into every AI prompt to keep your voice
+                                            consistent</span>
+                                    </div>
+                                </div>
+
+                                <!-- Tone Selector -->
+                                <div class="form-group">
+                                    <label class="form-label">Response Tone</label>
+                                    <div class="tone-grid" role="radiogroup" aria-label="Select response tone">
+                                        <label class="tone-card" for="tone-professional">
+                                            <input type="radio" name="tone" id="tone-professional" value="Professional"
+                                                checked />
+                                            <div class="tone-card__inner">
+                                                <div class="tone-card__icon tone-icon--professional" aria-hidden="true">
+                                                </div>
+                                                <span class="tone-card__label">Professional</span>
+                                                <span class="tone-card__sub">Formal and polished</span>
+                                            </div>
+                                        </label>
+                                        <label class="tone-card" for="tone-friendly">
+                                            <input type="radio" name="tone" id="tone-friendly" value="Friendly" />
+                                            <div class="tone-card__inner">
+                                                <div class="tone-card__icon tone-icon--friendly" aria-hidden="true">
+                                                </div>
+                                                <span class="tone-card__label">Friendly</span>
+                                                <span class="tone-card__sub">Warm and approachable</span>
+                                            </div>
+                                        </label>
+                                        <label class="tone-card" for="tone-empathetic">
+                                            <input type="radio" name="tone" id="tone-empathetic" value="Empathetic" />
+                                            <div class="tone-card__inner">
+                                                <div class="tone-card__icon tone-icon--empathetic" aria-hidden="true">
+                                                </div>
+                                                <span class="tone-card__label">Empathetic</span>
+                                                <span class="tone-card__sub">Understanding and caring</span>
+                                            </div>
+                                        </label>
+                                        <label class="tone-card" for="tone-formal">
+                                            <input type="radio" name="tone" id="tone-formal" value="Formal" />
+                                            <div class="tone-card__inner">
+                                                <div class="tone-card__icon tone-icon--formal" aria-hidden="true"></div>
+                                                <span class="tone-card__label">Formal</span>
+                                                <span class="tone-card__sub">Corporate and precise</span>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Review Input Card -->
+                        <div class="card" id="review-input-card">
+                            <div class="card__header">
+                                <h3 class="card__title">Customer Review</h3>
+                                <span class="card__badge">Input</span>
+                            </div>
+                            <div class="card__body">
+                                <div class="form-group">
+                                    <label class="form-label" for="star-rating">Star Rating</label>
+                                    <div class="star-rating-input" id="star-rating-input" role="group"
+                                        aria-label="Star rating">
+                                        <button type="button" class="star-btn" data-value="1" aria-label="1 star"><svg
+                                                viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                                <path
+                                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                            </svg></button>
+                                        <button type="button" class="star-btn" data-value="2" aria-label="2 stars"><svg
+                                                viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                                <path
+                                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                            </svg></button>
+                                        <button type="button" class="star-btn" data-value="3" aria-label="3 stars"><svg
+                                                viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                                <path
+                                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                            </svg></button>
+                                        <button type="button" class="star-btn" data-value="4" aria-label="4 stars"><svg
+                                                viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                                <path
+                                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                            </svg></button>
+                                        <button type="button" class="star-btn" data-value="5" aria-label="5 stars"><svg
+                                                viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                                <path
+                                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                            </svg></button>
+                                    </div>
+                                    <input type="hidden" id="star-rating" name="star-rating" value="0" />
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="review-text">Review Text</label>
+                                    <textarea class="form-input form-textarea" id="review-text" name="review-text"
+                                        placeholder="Paste the customer's review here..." rows="6" maxlength="2000"
+                                        aria-describedby="review-char-count"></textarea>
+                                    <div class="input-meta">
+                                        <span class="input-hint">Paste any review from Google, Yelp, or
+                                            TripAdvisor</span>
+                                        <span class="char-count" id="review-char-count"><span id="char-current">0</span>
+                                            / 2000</span>
+                                    </div>
+                                </div>
+                                <div class="form-actions">
+                                    <button class="btn btn--primary btn--full" id="generate-btn" type="button">
+                                        <svg class="btn__icon btn__icon--left" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
+                                        </svg>
+                                        Generate Response
+                                    </button>
+                                    <button class="btn btn--ghost" id="clear-btn" type="button">Clear</button>
+                                </div>
+                                <p class="generate-hint">Business name and review text are required. Press
+                                    <kbd>Ctrl</kbd> + <kbd>Enter</kbd> to generate.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div><!-- /generator__left -->
+
+                    <!-- RIGHT: Output + Analytics + History -->
+                    <div class="generator__right">
+
+                        <!-- Response Output Card -->
+                        <div class="card card--output" id="output-card">
+                            <div class="card__header">
+                                <h3 class="card__title">Generated Response</h3>
+                                <div class="card__actions">
+                                    <span class="response-meta" id="response-meta" aria-live="polite"></span>
+                                    <button class="btn btn--icon" id="export-btn" title="Download as TXT"
+                                        aria-label="Export response as text file" disabled>
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            aria-hidden="true">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
+                                        </svg>
+                                    </button>
+                                    <button class="btn btn--icon" id="copy-btn" title="Copy to clipboard"
+                                        aria-label="Copy response to clipboard" disabled>
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            aria-hidden="true">
+                                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                            <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"></path>
+                                        </svg>
+                                    </button>
+                                    <button class="btn btn--icon" id="regenerate-btn" title="Regenerate response"
+                                        aria-label="Regenerate response" disabled>
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            aria-hidden="true">
+                                            <polyline points="23 4 23 10 17 10"></polyline>
+                                            <path d="M20.49 15a9 9 0 11-2.12-9.36L23 10"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card__body">
+                                <!-- Empty State -->
+                                <div class="output-placeholder" id="output-placeholder">
+                                    <div class="placeholder-icon" aria-hidden="true">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.868.476l.002.002.001.001.001.002a.75.75 0 001.293 0l.002-.002.001-.001.002-.002c.198-.266.518-.45.868-.476 1.152-.086 2.294-.213 3.423-.379 1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" />
+                                        </svg>
+                                    </div>
+                                    <p class="placeholder-title">No Response Generated Yet</p>
+                                    <p class="placeholder-desc">Configure your business profile, paste a review, and
+                                        click "Generate Response" to see the AI-crafted reply appear here.</p>
+                                </div>
+
+                                <!-- Loading State -->
+                                <div class="output-loading" id="output-loading" aria-live="polite" hidden>
+                                    <div class="loading-bar">
+                                        <div class="loading-bar__fill"></div>
+                                    </div>
+                                    <div class="skeleton-lines">
+                                        <div class="skeleton-line skeleton-line--full"></div>
+                                        <div class="skeleton-line skeleton-line--full"></div>
+                                        <div class="skeleton-line skeleton-line--med"></div>
+                                        <div class="skeleton-line skeleton-line--full"></div>
+                                        <div class="skeleton-line skeleton-line--short"></div>
+                                    </div>
+                                    <p class="loading-label" id="loading-label">Groq AI is crafting your response...</p>
+                                </div>
+
+                                <!-- Response Text -->
+                                <div class="output-response" id="output-response" hidden>
+                                    <div class="response-sentiment" id="response-sentiment" aria-live="polite"></div>
+                                    <p class="response-body" id="response-body"></p>
+                                    <div class="response-actions-bottom">
+                                        <button class="btn btn--sm btn--ghost" id="copy-btn-bottom" type="button">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                width="14" height="14" aria-hidden="true">
+                                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                                <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"></path>
+                                            </svg>
+                                            Copy Response
+                                        </button>
+                                        <button class="btn btn--sm btn--ghost" id="export-btn-bottom" type="button">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                width="14" height="14" aria-hidden="true">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
+                                            </svg>
+                                            Export TXT
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Error State -->
+                                <div class="output-error" id="output-error" hidden role="alert">
+                                    <div class="error-icon" aria-hidden="true">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <circle cx="12" cy="12" r="10"></circle>
+                                            <line x1="12" y1="8" x2="12" y2="12"></line>
+                                            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                                        </svg>
+                                    </div>
+                                    <p class="error-title" id="error-title">Generation Failed</p>
+                                    <p class="error-desc" id="error-desc">An unexpected error occurred. Please check
+                                        your connection and try again.</p>
+                                    <button class="btn btn--sm btn--primary" id="retry-btn" type="button">Retry</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Follow-Up Action Card -->
+                        <div class="card card--followup" id="followup-card" hidden>
+                            <div class="card__header">
+                                <h3 class="card__title">Strategic Follow-Up</h3>
+                                <span class="card__badge">AI Advisor</span>
+                            </div>
+                            <div class="card__body">
+                                <div class="followup-loading" id="followup-loading" hidden>
+                                    <div class="skeleton-lines">
+                                        <div class="skeleton-line skeleton-line--full"></div>
+                                        <div class="skeleton-line skeleton-line--med"></div>
+                                    </div>
+                                </div>
+                                <div class="followup-content" id="followup-content" hidden>
+                                    <p class="followup-text" id="followup-text"></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sentiment Analysis Card -->
+                        <div class="card card--insight" id="insight-card" hidden>
+                            <div class="card__header">
+                                <h3 class="card__title">Review Analysis</h3>
+                                <span class="card__badge">AI Insight</span>
+                            </div>
+                            <div class="card__body">
+                                <div class="insight-grid" id="insight-grid"></div>
+                            </div>
+                        </div>
+
+                        <!-- Analytics Dashboard -->
+                        <div class="card" id="analytics" aria-labelledby="analytics-headline">
+                            <div class="card__header">
+                                <h3 class="card__title" id="analytics-headline">Analytics Dashboard</h3>
+                                <span class="card__badge">Session Stats</span>
+                            </div>
+                            <div class="card__body">
+                                <div class="analytics-grid">
+                                    <div class="analytics-stat">
+                                        <span class="analytics-stat__value" id="stat-total">0</span>
+                                        <span class="analytics-stat__label">Total Responses</span>
+                                    </div>
+                                    <div class="analytics-stat">
+                                        <span class="analytics-stat__value" id="stat-avg-rating">—</span>
+                                        <span class="analytics-stat__label">Avg Star Rating</span>
+                                    </div>
+                                    <div class="analytics-stat">
+                                        <span class="analytics-stat__value" id="stat-negative">0</span>
+                                        <span class="analytics-stat__label">Negative Reviews Handled</span>
+                                    </div>
+                                    <div class="analytics-stat">
+                                        <span class="analytics-stat__value" id="stat-positive">0</span>
+                                        <span class="analytics-stat__label">Positive Reviews Handled</span>
+                                    </div>
+                                </div>
+                                <div class="tone-breakdown" id="tone-breakdown">
+                                    <div class="tone-breakdown__label">Tone Usage</div>
+                                    <div class="tone-bars" id="tone-bars"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- History Card -->
+                        <div class="card" id="history" aria-labelledby="history-headline">
+                            <div class="card__header">
+                                <h3 class="card__title">Response History</h3>
+                                <button class="btn btn--sm btn--ghost" id="clear-history-btn" type="button">Clear
+                                    All</button>
+                            </div>
+                            <div class="card__body">
+                                <div class="history-list" id="history-list" role="list" aria-label="Previous responses">
+                                    <div class="history-empty" id="history-empty">
+                                        <p>No responses generated yet. History will appear here.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div><!-- /generator__right -->
+                </div><!-- /generator__layout -->
+            </div>
+        </section>
+
+        <!-- ===== FEATURES ===== -->
+        <section class="features" id="features" aria-labelledby="features-headline">
+            <div class="section__inner">
+                <div class="section__header">
+                    <div class="section__tag">Why ReviewReply AI</div>
+                    <h2 class="section__title" id="features-headline">Built for Real Business Needs</h2>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-card__icon feature-icon--speed" aria-hidden="true"></div>
+                        <h3 class="feature-card__title">Groq-Powered Speed</h3>
+                        <p class="feature-card__desc">Leverages Groq's purpose-built LPU inference engine to deliver
+                            responses in under 2 seconds, not minutes.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-card__icon feature-icon--brand" aria-hidden="true"></div>
+                        <h3 class="feature-card__title">Brand Voice Control</h3>
+                        <p class="feature-card__desc">Define your brand personality once. Every response will sound
+                            consistent, authentic, and on-brand.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-card__icon feature-icon--sentiment" aria-hidden="true"></div>
+                        <h3 class="feature-card__title">AI Strategic Advisor</h3>
+                        <p class="feature-card__desc">Beyond a reply — get a chained AI recommendation on what internal
+                            action to take based on the review.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-card__icon feature-icon--platform" aria-hidden="true"></div>
+                        <h3 class="feature-card__title">20+ Languages</h3>
+                        <p class="feature-card__desc">Generate responses in Spanish, French, Arabic, Japanese, and 18+
+                            more languages for global businesses.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-card__icon feature-icon--history" aria-hidden="true"></div>
+                        <h3 class="feature-card__title">Analytics Dashboard</h3>
+                        <p class="feature-card__desc">Track total responses, average star rating, tone usage, and
+                            sentiment distribution over your session.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-card__icon feature-icon--free" aria-hidden="true"></div>
+                        <h3 class="feature-card__title">Export and Copy</h3>
+                        <p class="feature-card__desc">Copy responses to clipboard instantly or download as a formatted
+                            TXT file for record-keeping.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer__inner">
+            <div class="footer__brand">
+                <div class="navbar__logo navbar__logo--sm" aria-hidden="true"><span class="logo-mark">R</span></div>
+                <span class="footer__name">ReviewReply <span class="accent">AI</span></span>
+            </div>
+            <nav class="footer__nav" aria-label="Footer navigation">
+                <a href="#generator" class="footer__link">Generator</a>
+                <a href="#how-it-works" class="footer__link">How It Works</a>
+                <a href="#analytics" class="footer__link">Analytics</a>
+            </nav>
+            <p class="footer__copy">&copy; 2026 ReviewReply AI. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- ===== MOBILE NAV OVERLAY ===== -->
+    <div class="mobile-nav" id="mobile-nav" aria-hidden="true" hidden>
+        <a href="#generator" class="mobile-nav__link">Generator</a>
+        <a href="#how-it-works" class="mobile-nav__link">How It Works</a>
+        <a href="#analytics" class="mobile-nav__link">Analytics</a>
+        <a href="#history" class="mobile-nav__link">History</a>
+    </div>
+    <!-- /MOBILE NAV OVERLAY -->
+
+    <!-- ===== AI CHATBOT WIDGET ===== -->
+    <div class="chatbot-widget" id="chatbot-widget">
+
+        <!-- Floating Toggle Button -->
+        <button class="chatbot-toggle" id="chatbot-toggle" type="button" aria-label="Open ReviewReply Assistant"
+            aria-expanded="false" aria-controls="chatbot-panel">
+            <svg class="chatbot-toggle__icon chatbot-toggle__icon--chat" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z" />
+            </svg>
+            <svg class="chatbot-toggle__icon chatbot-toggle__icon--close" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+            <span class="chatbot-unread" id="chatbot-unread" hidden>1</span>
+        </button>
+
+        <!-- Chat Panel -->
+        <div class="chatbot-panel" id="chatbot-panel" hidden>
+            <div class="chatbot-header">
+                <div class="chatbot-header__info">
+                    <div class="chatbot-avatar" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="chatbot-header__name">ReviewReply Assistant</div>
+                        <div class="chatbot-header__status">
+                            <span class="status-dot" aria-hidden="true"></span>
+                            Always here to help
+                        </div>
+                    </div>
+                </div>
+                <div class="chatbot-header__actions">
+                    <button class="btn btn--icon chatbot-clear-btn" id="chatbot-clear-btn" type="button"
+                        title="Clear conversation" aria-label="Clear conversation">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
+                        </svg>
+                    </button>
+                    <button class="btn btn--icon" id="chatbot-close" type="button" aria-label="Close assistant">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="chatbot-messages" id="chatbot-messages" role="log" aria-live="polite"></div>
+
+            <div class="chatbot-typing" id="chatbot-typing" hidden>
+                <div class="chatbot-typing__bubble">
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                </div>
+            </div>
+
+            <div class="chatbot-input-area">
+                <textarea class="chatbot-input" id="chatbot-input" placeholder="Ask about review management..." rows="1"
+                    maxlength="600" aria-label="Message ReviewReply Assistant"></textarea>
+                <button class="chatbot-send" id="chatbot-send" type="button" aria-label="Send message">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path
+                            d="M3.478 2.405a.75.75 0 00-.926.94l2.432 7.905H13.5a.75.75 0 010 1.5H4.984l-2.432 7.905a.75.75 0 00.926.94 60.519 60.519 0 0018.445-8.986.75.75 0 000-1.218A60.517 60.517 0 003.478 2.405z" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="chatbot-footer">Responses are AI-generated. Always review before acting.</div>
+        </div>
+    </div>
+    <!-- /CHATBOT WIDGET -->
+
+    <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
