@@ -6,6 +6,8 @@
 
 **Turn Every Review Into a Brand Opportunity**
 
+[🚀 Live Demo](https://review-reply-ai-eta.vercel.app/)
+
 Generate professional, on-brand responses to customer reviews in seconds.  
 Protect your reputation, retain customers, and save hours every week.
 
@@ -68,12 +70,6 @@ Protect your reputation, retain customers, and save hours every week.
 
 ### Keyboard Shortcut
 - Press **`Ctrl + Enter`** (or `Cmd + Enter` on macOS) to generate a response instantly
-
----
-
-## Screenshots
-
-![ReviewReply AI — Full Page Preview](asset/Screenshot_25-2-2026_172121_127.0.0.1.jpeg)
 
 ---
 
