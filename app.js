@@ -336,12 +336,20 @@ const SENTIMENT_LABELS = {
    GROQ API CALL (reusable)
    ============================================================ */
 async function groqRequest(messages, maxTokens) {
-    const response = await fetch(CONFIG.GROQ_API_URL, {
+    const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+
+    // In production, we call our own /api/chat proxy to hide the key.
+    // Locally, we call Groq directly using the key in CONFIG.
+    const url = isLocal ? CONFIG.GROQ_API_URL : '/api/chat';
+    const headers = { 'Content-Type': 'application/json' };
+
+    if (isLocal) {
+        headers['Authorization'] = `Bearer ${CONFIG.GROQ_API_KEY}`;
+    }
+
+    const response = await fetch(url, {
         method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${CONFIG.GROQ_API_KEY}`,
-        },
+        headers: headers,
         body: JSON.stringify({
             model: CONFIG.MODEL,
             messages,
